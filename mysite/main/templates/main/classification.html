@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text analysis</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{%static 'styles.css'%}">
+</head>
+<body> 
+    <h1 class = 'main_text'>Классификация текста</h1> 
+    <div class="main_section">
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Анализировать</button>
+    </form>
+    
+    {% if rate is not None and sentiment_bin is not None %}
+    <h2>Результаты анализа:</h2>
+    <p>Статус комментария:
+        {% if sentiment_bin == 0 %}
+            Отрицательный
+        {% elif sentiment_bin == 1 %}
+            Положительный
+        {% endif %}
+    </p>
+    <p>Рейтинг фильма: {{ rate }} &#9733;</p>
+    {% endif %}
+    </div>
+
+    <div class = "footer">
+        <p>Case_Lab ML</p>
+        <p>Клинова Мария</p>
+    </div>
+
+</body>
+</html>
