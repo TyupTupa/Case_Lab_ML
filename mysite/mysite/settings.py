@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w^ytsqu^8!(&nm%j*%kwast3-qim=8&w8n@6rhz2fzg78jydin'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['case-lab-ml-klinova.onrender.com', 'localhost', '127.0.0.1']
 
