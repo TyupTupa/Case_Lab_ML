@@ -37,7 +37,6 @@ def classification_form(request):
             text = form.cleaned_data['text']
             rate, sentiment_bin = model_answer(model, [text])
             rate = rate[0]
-            print(rate[0], sentiment_bin)
 
     else:
         form = TextForm()
