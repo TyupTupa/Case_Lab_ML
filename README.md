@@ -11,6 +11,8 @@
 ```bash
 git clone https://github.com/TyupTupa/Case_Lab_ML
 ```
+Если модель не загружается, то скачайте text_classification_model.pkl вручную и расположите ее в папке проекта mysite.
+
 Создайте окружение python
 ```bash
 python -m venv venv
