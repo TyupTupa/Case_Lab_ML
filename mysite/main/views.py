@@ -36,6 +36,7 @@ def classification_form(request):
         if form.is_valid():
             text = form.cleaned_data['text']
             rate, sentiment_bin = model_answer(model, [text])
+            rate = rate[0]
             print(rate[0], sentiment_bin)
 
     else:
@@ -43,7 +44,7 @@ def classification_form(request):
 
     return render(request, 'main/classification.html', {
         'form': form,
-        'rate': rate[0],
+        'rate': rate,
         'sentiment_bin': sentiment_bin
     })
 
